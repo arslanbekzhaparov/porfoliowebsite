@@ -4,19 +4,26 @@ import styled from 'styled-components';
 
 const BackgroundCanvas = styled.canvas`
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  overflow: auto; /* Enable scrolling */
 `;
 
-const SplineBackground: React.FC = () => {
+interface SplineBackgroundProps {
+  splineSceneUrl: string;
+}
+
+const SplineBackground: React.FC<SplineBackgroundProps> = ({ splineSceneUrl }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (canvasRef.current) {
       const app = new Application(canvasRef.current);
-      app.load('https://prod.spline.design/1pLL8hQ2rWkXmjMn/scene.splinecode');
+      app.load(splineSceneUrl);
     }
-  }, []);
+  }, [splineSceneUrl]);
 
   return <BackgroundCanvas ref={canvasRef} />;
 };

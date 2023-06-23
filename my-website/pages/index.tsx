@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
 import SplineBackground from '@components/spline';
+import ScrollingBackground from '@components/scroll';
 
 const Container = styled.div`
   /* Add your container styles here */
@@ -17,7 +18,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <SplineBackground />
+      <SplineBackground splineSceneUrl="https://prod.spline.design/1pLL8hQ2rWkXmjMn/scene.splinecode" />
+      <ScrollingBackground />
     </Container>
   );
 };
