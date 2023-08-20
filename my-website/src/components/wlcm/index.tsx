@@ -55,8 +55,8 @@ function WelcomeDIV() {
             <Image
               src={bgpSpline}
               alt="Spline Placeholder"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{objectFit: "cover"}}
             />
           </ImageContainer>
         </SplineDiv>
