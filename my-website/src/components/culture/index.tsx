@@ -129,6 +129,7 @@ const Card4 = styled.div`
   height: 301px;
   background-color: black;
   border-radius: 20px;
+  margin-bottom: 24px;
 `;
 
 const Card4Txt = styled.div`
