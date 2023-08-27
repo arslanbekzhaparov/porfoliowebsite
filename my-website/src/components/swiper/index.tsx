@@ -8,6 +8,10 @@ import 'swiper/swiper-bundle.min.css';
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   background: #000;
+  spaceBetween: 10,
+  slidesPerView: 5,
+  onSlideChange: handleSlideChange,
+  onSwiper: handleSwiper,
 `;
 
 const CenteredText = styled.div`
@@ -54,10 +58,6 @@ const SwiperComponent = () => {
     <>
       <CenteredText>Projects</CenteredText>
       <StyledSwiper
-        spaceBetween={10} // Adjust spacing between slides
-        slidesPerView={5}
-        onSlideChange={handleSlideChange}
-        onSwiper={handleSwiper}
         // loop={true} // Enable the loop effect
         // loopedSlides={9} // Total number of slides including clones (7 + 1)
         // edgeSwipeDetection = {true}
