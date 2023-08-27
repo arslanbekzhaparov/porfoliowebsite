@@ -24,7 +24,7 @@ const CenteredText = styled.div`
   line-height: normal;
 `;
 
-const Slide = styled(SwiperSlide)`
+const Slide = styled(SwiperSlide)<{ index: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
