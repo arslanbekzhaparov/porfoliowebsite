@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const ContactDiv = styled.div`
   width: 100%;
-  height: 300px;
+  height: 350px;
   background-color: #161617;
   display: flex;
   flex-direction: column;
