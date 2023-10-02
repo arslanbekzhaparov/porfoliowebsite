@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image'; // Import Image component from next/image
-
+import Image from 'next/image';
 import bgpSpline from '@images/SplinePlaceholder.png';
+import Spline from '@splinetool/react-spline';
 
 const StyledDiv = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
   display: flex;
   flex-direction: column;
 `;
 
 const TextContainer = styled.div`
-  padding-left: 120px;
   margin-top: 20px;
   color: #FFF;
   text-align: left;
@@ -21,6 +20,15 @@ const TextContainer = styled.div`
   font-size: 48px;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 120px;
+  }
 `;
 
 const CenteredContent = styled.div`
@@ -36,13 +44,20 @@ const SplineDiv = styled.div`
   width: 1300px;
   height: 400px;
   border-radius: 300px;
-  overflow: hidden; /* Clip the overflowing image */
+  overflow: hidden;
+  background-color: #grey;
+
+  @media (max-width: 450px) {
+    width: 400px;
+    height: 400px; /* Make it a square shape for mobile screens */
+    border-radius: 50%; /* Make it a circle on mobile screens */
+  }
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
+  // width: 80%; /* Adjust the width as needed */
+  // height: 80%; /* Adjust the height as needed */
+  // margin: 10%; /* Center the smaller Spline */
 `;
 
 function WelcomeDIV() {
@@ -51,18 +66,15 @@ function WelcomeDIV() {
       <TextContainer>Welcome to my portfolio</TextContainer>
       <CenteredContent>
         <SplineDiv>
-          <ImageContainer>
-            <Image
-              src={bgpSpline}
-              alt="Spline Placeholder"
-              fill
-              style={{objectFit: "cover"}}
-            />
+        <ImageContainer>
+          {/* <Spline
+            scene="https://prod.spline.design/1pLL8hQ2rWkXmjMn/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          /> */}
           </ImageContainer>
         </SplineDiv>
       </CenteredContent>
     </StyledDiv>
   );
 }
-
 export default WelcomeDIV;

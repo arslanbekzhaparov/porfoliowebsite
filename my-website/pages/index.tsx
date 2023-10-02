@@ -6,6 +6,7 @@ import WelcomeDIV from '@components/wlcm';
 import CultureDiv from '@components/culture'
 import SwiperComponent from '@components/swiper';
 import ContactSec from '@components/contact';
+import ProjectSec from '@components/projects';
 
 const Container = styled.div`
   /* Add your container styles here */
@@ -22,8 +23,9 @@ const Home: NextPage = () => {
       </Head>
       <WelcomeDIV></WelcomeDIV>
       <CultureDiv></CultureDiv>
+      {/* <ProjectSec></ProjectSec> */}
       <SwiperComponent></SwiperComponent>
-      <ContactSec></ContactSec>
+      {/* <ContactSec></ContactSec> */}
     </Container>
   );
 };

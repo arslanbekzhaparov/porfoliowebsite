@@ -15,6 +15,10 @@ const CultureSec = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 985px) {
+    display: none;
+  }
 `;
 
 const CenteredText = styled.div`
@@ -45,6 +49,7 @@ const Card1 = styled.div`
   background-color: black;
   border-radius: 20px;
   justify-content: center;
+  
 `;
 
 const Card1Txt = styled.div`
@@ -65,6 +70,7 @@ background: linear-gradient(180deg, #DDEBF3 0%, #2990D7 100%);
 background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+
 `
 
 const Card2 = styled.div`
@@ -101,6 +107,10 @@ const Card3 = styled.div`
   height: 583px;
   background-color: black;
   border-radius: 20px;
+
+  @media (max-width: 985px) {
+    display: none;
+  }
 `;
 
 const Card3Txt = styled.div`
@@ -130,6 +140,10 @@ const Card4 = styled.div`
   background-color: black;
   border-radius: 20px;
   margin-bottom: 24px;
+
+  @media (max-width: 985px) {
+    display: none;
+  }
 `;
 
 const Card4Txt = styled.div`
@@ -154,6 +168,10 @@ const Card5 = styled.div`
   height: 301px;
   background-color: black;
   border-radius: 20px;
+
+  @media (max-width: 985px) {
+    display: none;
+  }
 `;
 
 const Card1ImageWrapper = styled.div`
@@ -201,12 +219,12 @@ function CultureDiv() {
             <Card1Txt>from Love</Card1Txt>           
             <Card1ImageWrapper>
               {/* Use next/image for optimizing and loading the image */}
-              <Image src={Card1Pic} alt="Card 1" layout="fill" objectFit="contain" />
+              <Image src={Card1Pic} alt="Card 1" fill style={{objectFit: 'contain',}} />
             </Card1ImageWrapper></Card1>
             <Card2>        
             <Card2ImageWrapper>
               {/* Use next/image for optimizing and loading the image */}
-              <Image src={Card2Pic} alt="Card 2" layout="fill" objectFit="contain" />
+              <Image src={Card2Pic} alt="Card 2" fill style={{objectFit: 'contain',}}  />
             </Card2ImageWrapper>
             <Card2Txt>that comes from the Hearts of Two Lovers</Card2Txt></Card2>
         </Column>
@@ -214,7 +232,7 @@ function CultureDiv() {
             <Card3Txt>that forms the Unity of a Nation</Card3Txt>           
             <Card3ImageWrapper>
               {/* Use next/image for optimizing and loading the image */}
-              <Image src={Card3Pic} alt="Card 3" layout="fill" objectFit="contain" />
+              <Image src={Card3Pic} alt="Card 3" fill style={{objectFit: 'contain',}}  />
             </Card3ImageWrapper></Card3>
       </CardsContainer>
       <CardsContainer>
@@ -223,12 +241,12 @@ function CultureDiv() {
             <Card4ImageWrapper>
             {/* TODO: fix this issues the text should appear */}
               {/* <Card4Txt>Kyrgyz Ornament is a Rich Heritage</Card4Txt> */}
-              <Image src={Card4Pic} alt="Card 4" layout="fill" objectFit="contain" />
+              <Image src={Card4Pic} alt="Card 4" fill style={{objectFit: 'contain',}}  />
             </Card4ImageWrapper> </Card4></Column>
             <Card5>   
             <Card5ImageWrapper>
               {/* Use next/image for optimizing and loading the image */}
-              <Image src={Card5Pic} alt="Card 5" layout="fill" objectFit="contain" />
+              <Image src={Card5Pic} alt="Card 5" fill style={{objectFit: 'contain',}}  />
             </Card5ImageWrapper></Card5>
       </CardsContainer>
     </CultureSec>
