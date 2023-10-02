@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import WelcomeDIV from '@components/wlcm';
 import CultureDiv from '@components/culture'
-import SwiperComponent from '@components/swiper';
+// import SwiperComponent from '@components/swiper';
 import ContactSec from '@components/contact';
 import ProjectSec from '@components/projects';
 
@@ -22,9 +22,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WelcomeDIV></WelcomeDIV>
-      <CultureDiv></CultureDiv>
-      {/* <ProjectSec></ProjectSec> */}
-      <SwiperComponent></SwiperComponent>
+      {/* <CultureDiv></CultureDiv> */}
+      <ProjectSec></ProjectSec>
+      {/* <SwiperComponent></SwiperComponent> */}
       {/* <ContactSec></ContactSec> */}
     </Container>
   );

@@ -49,15 +49,13 @@ const SplineDiv = styled.div`
 
   @media (max-width: 450px) {
     width: 400px;
-    height: 400px; /* Make it a square shape for mobile screens */
-    border-radius: 50%; /* Make it a circle on mobile screens */
+    height: 350px; /* Make it a square shape for mobile screens */
   }
 `;
 
 const ImageContainer = styled.div`
-  // width: 80%; /* Adjust the width as needed */
-  // height: 80%; /* Adjust the height as needed */
-  // margin: 10%; /* Center the smaller Spline */
+  width: 100%; /* Set width to 100% to take up the entire SplineDiv width */
+  height: 100%; /* Set height to 100% to take up the entire SplineDiv height */
 `;
 
 function WelcomeDIV() {
@@ -67,6 +65,11 @@ function WelcomeDIV() {
       <CenteredContent>
         <SplineDiv>
         <ImageContainer>
+        <Image
+              src={bgpSpline}
+              alt="Spline Placeholder"
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            />
           {/* <Spline
             scene="https://prod.spline.design/1pLL8hQ2rWkXmjMn/scene.splinecode"
             style={{ width: '100%', height: '100%' }}
