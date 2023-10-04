@@ -56,6 +56,7 @@ const SplineDiv = styled.div`
 const ImageContainer = styled.div`
   width: 100%; /* Set width to 100% to take up the entire SplineDiv width */
   height: 100%; /* Set height to 100% to take up the entire SplineDiv height */
+  
 `;
 
 function WelcomeDIV() {
@@ -71,7 +72,7 @@ function WelcomeDIV() {
               style={{ objectFit: 'cover', width: '100%', height: '100%' }}
             />
           {/* <Spline
-            scene="https://prod.spline.design/1pLL8hQ2rWkXmjMn/scene.splinecode"
+            scene="https://draft.spline.design/USv93if4U0-rn4B6/scene.splinecode"
             style={{ width: '100%', height: '100%' }}
           /> */}
           </ImageContainer>
