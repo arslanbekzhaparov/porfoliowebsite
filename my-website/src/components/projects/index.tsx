@@ -77,7 +77,7 @@ const CircleButton = styled.button<{ circleColor?: string }>`
   bottom: 15px;
   right: 15px;
   border-radius: 50%;
-  background-color: ${(props) => props.circleColor || 'red'}; /* Use the provided color or default to red */
+  background-color: ${(props) => props.circleColor}; /* Use the provided color or default to red */
   display: flex;
   align-items: center;
   justify-content: center;
