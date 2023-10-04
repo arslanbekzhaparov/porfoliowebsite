@@ -5,8 +5,8 @@ import bgpSpline from '@images/SplinePlaceholder.png';
 import Spline from '@splinetool/react-spline';
 
 const StyledDiv = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
