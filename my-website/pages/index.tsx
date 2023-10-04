@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       {/* <CultureDiv></CultureDiv> */}
       <ProjectSec></ProjectSec>
       {/* <SwiperComponent></SwiperComponent> */}
-      <ContactSec></ContactSec>
+      {/* <ContactSec></ContactSec> */}
     </Container>
   );
 };

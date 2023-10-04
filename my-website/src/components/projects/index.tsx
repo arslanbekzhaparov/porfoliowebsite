@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Image from 'next/image';
 
 import TRpng from '@images/TRsmall.png';
@@ -69,7 +69,9 @@ const CenteredText = styled.div`
   line-height: normal;
 `;
 
-const CircleButton = styled.button<{ circleColor?: string }>`
+const CircleButton = styled.button<{
+  $backgroundColor?: string; // Define $backgroundColor as a transient prop
+}>`
   width: 35px;
   height: 35px;
   flex-shrink: 0;
@@ -77,7 +79,7 @@ const CircleButton = styled.button<{ circleColor?: string }>`
   bottom: 15px;
   right: 15px;
   border-radius: 50%;
-  background-color: ${(props) => props.circleColor}; /* Use the provided color or default to red */
+  background-color: ${(props) => props.$backgroundColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,8 +151,12 @@ function ProjectsSection() {
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
             <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
-            <CircleButton as="button" circleColor={project.color} onClick={() => window.location.href = project.link}>
-              <CircleImage src={GithubIcon} alt={'Github Link'}  />
+            <CircleButton
+              as="button"
+              $backgroundColor={project.color} // Use $backgroundColor prop
+              onClick={() => window.location.href = project.link}
+            >
+              <CircleImage src={GithubIcon} alt={'Github Link'} />
             </CircleButton>
           </Card>
         ))}
