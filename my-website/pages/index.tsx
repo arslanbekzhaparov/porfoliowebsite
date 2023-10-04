@@ -24,7 +24,6 @@ const Home: NextPage = () => {
       <WelcomeDIV></WelcomeDIV>
       {/* <CultureDiv></CultureDiv> */}
       <ProjectSec></ProjectSec>
-      {/* <SwiperComponent></SwiperComponent> */}
       {/* <ContactSec></ContactSec> */}
     </Container>
   );
