@@ -149,7 +149,7 @@ function ProjectsSection() {
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
             <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
-            <CircleButton circleColor={project.color} onClick={() => window.location.href = project.link}>
+            <CircleButton as="button" circleColor={project.color} onClick={() => window.location.href = project.link}>
               <CircleImage src={GithubIcon} alt={'Github Link'}  />
             </CircleButton>
           </Card>
