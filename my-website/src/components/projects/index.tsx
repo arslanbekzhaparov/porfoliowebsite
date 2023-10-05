@@ -42,6 +42,10 @@ const Card = styled.div`
   border-radius: 30px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column; /* Arrange title and tags vertically */
+  padding: 20px; /* Add padding to create space for title and tags */
+  justify-content: space-between; /* Align content at the top and bottom of the card */
 
   @media (max-width: 1007px) {
     flex: 1 1 calc(100% - 40px); /* Make the cards take up the full width while preserving their dimensions */
@@ -49,6 +53,42 @@ const Card = styled.div`
     min-height: 308px;
   }
 `;
+
+const TitleAndTagsContainer = styled.div`
+  width: 70%;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end; /* Align the container at the bottom */
+  margin-left: 20px; /* Add 20px spacing on the left */
+  margin-bottom: 20px; /* Add 20px spacing from the bottom */
+`;
+
+const TitleText = styled.div`
+  color: rgba(240, 240, 240, 0.65);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 16px; /* Add spacing between title and tags */
+  `;
+
+const TagsText = styled.div`
+  color: rgba(240, 240, 240, 0.65);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
 
 const CardImage = styled(Image)`
   width: 100%;
@@ -67,6 +107,10 @@ const CenteredText = styled.div`
   font-size: 48px;
   font-weight: 600;
   line-height: normal;
+
+  @media (max-width: 525px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const CircleButton = styled.button<{
@@ -107,38 +151,43 @@ const CircleImage = styled(Image)`
 const projects = [
   {
     id: 1,
-    title: 'Project 1',
+    title: 'Tennis Robot',
     imageUrl: TRpng,
     color: '#628300', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Lovely-Tennis-Robot', // Custom link for this circle
+    tags: ['Integrated Engineering'],
   },
   {
     id: 2,
-    title: 'Project 2',
+    title: 'Smart Trash Sorter',
     imageUrl: STSpng,
     color: '#164262', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Smart-Automatic-Recycling-Sorter', // Custom link for this circle
+    tags: ['Integrated Engineering'], 
   },
   {
     id: 3,
-    title: 'Project 3',
+    title: 'Snake Game',
     imageUrl: Snakepng,
     color: '#FF7F50', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/SNAKE-MATH-GAME', // Custom link for this circle
+    tags: ['Software Development'],
   },
   {
     id: 4,
-    title: 'Project 4',
+    title: 'MyFridge',
     imageUrl: MFpng,
     color: '#DEE4EC', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/MyFridge', // Custom link for this circle
+    tags: ['Design', 'Software Development'], 
   },
   {
     id: 5,
-    title: 'Project 5',
+    title: 'Fraud Detection System',
     imageUrl: FDSpng,
     color: '#656278', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Fraud-Detection-System', // Custom link for this circle
+    tags: ['Machine Learning'], // Add tags for Project 1
   },
   // Add more projects as needed
 ];
@@ -151,6 +200,10 @@ function ProjectsSection() {
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
             <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
+            <TitleAndTagsContainer>
+              <TitleText>{project.title}</TitleText>
+              <TagsText>{project.tags.join(', ')}</TagsText>
+            </TitleAndTagsContainer>
             <CircleButton
               as="button"
               $backgroundColor={project.color} // Use $backgroundColor prop

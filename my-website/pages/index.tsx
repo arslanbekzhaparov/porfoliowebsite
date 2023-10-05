@@ -8,10 +8,76 @@ import CultureDiv from '@components/culture'
 import ContactSec from '@components/contact';
 import ProjectSec from '@components/projects';
 
+import React from 'react';
+import bgpSpline from '@images/SplinePlaceholder.png';
+import Spline from '@splinetool/react-spline';
+
 const Container = styled.div`
-  /* Add your container styles here */
+  background-color: black;
 `;
 
+const StyledDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+`;
+
+const CenteredContent = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+`;
+
+const TextContainer = styled.div`
+  margin-top: 20px;
+  color: #FFF;
+  text-align: left;
+  font-family: Inter, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: normal;
+
+  @media (max-width: 767px) {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 120px;
+  }
+`;
+const SplineDiv = styled.div`
+  width: 1300px;
+  height: 400px;
+  border-radius: 300px;
+  overflow: hidden;
+  background-color: #grey;
+
+  @media (max-width: 450px) {
+    width: 400px;
+    height: 350px; /* Make it a square shape for mobile screens */
+  }
+`;
+
+const ContactDiv = styled.div`
+  width: 100%;
+  height: 350px;
+  background-color: #161617;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ImageContainer = styled.div`
+  width: 100%; /* Set width to 100% to take up the entire SplineDiv width */
+  height: 100%; /* Set height to 100% to take up the entire SplineDiv height */
+  `;
 
 const Home: NextPage = () => {
   return (
@@ -22,9 +88,30 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WelcomeDIV></WelcomeDIV>
+      <CenteredContent>
+        <SplineDiv>
+        <ImageContainer>
+        {/* <Image
+              src={bgpSpline}
+              alt="Spline Placeholder"
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+            /> */}
+          <Spline
+            scene="https://draft.spline.design/USv93if4U0-rn4B6/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          />
+          </ImageContainer>
+        </SplineDiv>
+      </CenteredContent>
       {/* <CultureDiv></CultureDiv> */}
       <ProjectSec></ProjectSec>
-      <ContactSec></ContactSec>
+      <ContactDiv>
+      {/* Spline Component */}
+      <Spline scene="https://draft.spline.design/4q6Ld86DdyilxI4a/scene.splinecode" />
+
+      {/* Other content for your contact section */}
+    </ContactDiv>
+      {/* <ContactSec></ContactSec> */}
     </Container>
   );
 };

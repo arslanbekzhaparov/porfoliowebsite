@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import bgpSpline from '@images/SplinePlaceholder.png';
 import Spline from '@splinetool/react-spline';
+import ContactSec from '@components/contact';
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -63,21 +64,6 @@ function WelcomeDIV() {
   return (
     <StyledDiv>
       <TextContainer>Welcome to my portfolio</TextContainer>
-      <CenteredContent>
-        <SplineDiv>
-        <ImageContainer>
-        <Image
-              src={bgpSpline}
-              alt="Spline Placeholder"
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-            />
-          {/* <Spline
-            scene="https://draft.spline.design/USv93if4U0-rn4B6/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
-          /> */}
-          </ImageContainer>
-        </SplineDiv>
-      </CenteredContent>
     </StyledDiv>
   );
 }
