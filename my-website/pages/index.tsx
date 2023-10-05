@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       <WelcomeDIV></WelcomeDIV>
       {/* <CultureDiv></CultureDiv> */}
       <ProjectSec></ProjectSec>
-      {/* <ContactSec></ContactSec> */}
+      <ContactSec></ContactSec>
     </Container>
   );
 };
