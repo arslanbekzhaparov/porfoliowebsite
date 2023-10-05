@@ -106,11 +106,8 @@ const Home: NextPage = () => {
       {/* <CultureDiv></CultureDiv> */}
       <ProjectSec></ProjectSec>
       <ContactDiv>
-      {/* Spline Component */}
-      <Spline scene="https://draft.spline.design/4q6Ld86DdyilxI4a/scene.splinecode" />
-
-      {/* Other content for your contact section */}
-    </ContactDiv>
+        <Spline scene="https://prod.spline.design/c7TnsZRHoG2Z-zDG/scene.splinecode" />
+      </ContactDiv>
       {/* <ContactSec></ContactSec> */}
     </Container>
   );

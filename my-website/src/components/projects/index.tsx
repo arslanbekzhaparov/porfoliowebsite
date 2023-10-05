@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 
-import TRpng from '@images/TRsmall.png';
-import STSpng from '@images/STSsmall.png';
-import Snakepng from '@images/Snakesmall.png';
-import MFpng from '@images/MFsmall.png';
-import FDSpng from '@images/FDSsmall.png';
+import TRpng from '@images/TRsmall.svg';
+import STSpng from '@images/STSsmall.svg';
+import Snakepng from '@images/Snakesmall.svg';
+import MFpng from '@images/MFsmall.svg';
+import FDSpng from '@images/FDSsmall.svg';
 import GithubIcon from '@images/Githublink.svg';
 
 const ProjectSectionContainer = styled.div`
@@ -47,11 +47,32 @@ const Card = styled.div`
   padding: 20px; /* Add padding to create space for title and tags */
   justify-content: space-between; /* Align content at the top and bottom of the card */
 
+  &:hover {
+    transform: scale(1.01); /* Scale up on hover */
+  }
+
+  &:active {
+    transform: scale(0.99); /* Scale down on press */
+  }
+
   @media (max-width: 1007px) {
     flex: 1 1 calc(100% - 40px); /* Make the cards take up the full width while preserving their dimensions */
     max-width: 373px; /* Remove the max-width */
     min-height: 308px;
   }
+  
+`;
+
+const CardLink = styled.a`
+  text-decoration: none; /* Remove underline from the anchor */
+  color: inherit; /* Inherit the text color from parent */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  
 `;
 
 const TitleAndTagsContainer = styled.div`
@@ -156,6 +177,7 @@ const projects = [
     color: '#628300', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Lovely-Tennis-Robot', // Custom link for this circle
     tags: ['Integrated Engineering'],
+    website: 'https://lovely-tennis-robot.vercel.app/',
   },
   {
     id: 2,
@@ -163,7 +185,8 @@ const projects = [
     imageUrl: STSpng,
     color: '#164262', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Smart-Automatic-Recycling-Sorter', // Custom link for this circle
-    tags: ['Integrated Engineering'], 
+    tags: ['Integrated Engineering'],
+    website: 'https://github.com/arslanbekzhaparov',
   },
   {
     id: 3,
@@ -172,6 +195,7 @@ const projects = [
     color: '#FF7F50', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/SNAKE-MATH-GAME', // Custom link for this circle
     tags: ['Software Development'],
+    website: 'https://github.com/arslanbekzhaparov',
   },
   {
     id: 4,
@@ -179,7 +203,8 @@ const projects = [
     imageUrl: MFpng,
     color: '#DEE4EC', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/MyFridge', // Custom link for this circle
-    tags: ['Design', 'Software Development'], 
+    tags: ['Design', 'Software Development'],
+    website: 'https://github.com/arslanbekzhaparov',
   },
   {
     id: 5,
@@ -188,6 +213,7 @@ const projects = [
     color: '#656278', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Fraud-Detection-System', // Custom link for this circle
     tags: ['Machine Learning'], // Add tags for Project 1
+    website: 'https://github.com/arslanbekzhaparov',
   },
   // Add more projects as needed
 ];
@@ -199,18 +225,16 @@ function ProjectsSection() {
       <GridContainer>
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
-            <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
-            <TitleAndTagsContainer>
-              <TitleText>{project.title}</TitleText>
-              <TagsText>{project.tags.join(', ')}</TagsText>
-            </TitleAndTagsContainer>
-            <CircleButton
-              as="button"
-              $backgroundColor={project.color} // Use $backgroundColor prop
-              onClick={() => window.location.href = project.link}
-            >
-              <CircleImage src={GithubIcon} alt={'Github Link'} />
-            </CircleButton>
+            <CardLink href={project.website} target="_blank">
+              <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
+              <TitleAndTagsContainer>
+                <TitleText>{project.title}</TitleText>
+                <TagsText>{project.tags.join(', ')}</TagsText>
+              </TitleAndTagsContainer>
+              {/* <CircleButton $backgroundColor={project.color}>
+                <CircleImage src={GithubIcon} alt={'Github Link'} />
+              </CircleButton> */}
+            </CardLink>
           </Card>
         ))}
       </GridContainer>
