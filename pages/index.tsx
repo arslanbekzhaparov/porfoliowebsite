@@ -106,14 +106,14 @@ const Home: NextPage = () => {
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Arslanbek Zhaparov"/>
         <meta property="og:description" content="Welcome to my portfolio!"/>
-        <meta property="og:image" content="https://github.com/arslanbekzhaparov/porfoliowebsite/blob/main/my-website/public/images/MetaAvatar.png?raw=true"/>
+        <meta property="og:image" content="https://github.com/arslanbekzhaparov/porfoliowebsite/blob/main/public/images/MetaAvatar.png?raw=true"/>
 
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="twitter:domain" content="portfoliowebsite-beryl.vercel.app"/>
         <meta property="twitter:url" content="https://portfoliowebsite-beryl.vercel.app/"/>
         <meta name="twitter:title" content="Arslanbek Zhaparov"/>
         <meta name="twitter:description" content="Welcome to my portfolio!"/>
-        <meta name="twitter:image" content="https://github.com/arslanbekzhaparov/porfoliowebsite/blob/main/my-website/public/images/MetaAvatar.png?raw=true"/>
+        <meta name="twitter:image" content="https://github.com/arslanbekzhaparov/porfoliowebsite/blob/main/public/images/MetaAvatar.png?raw=true"/>
       </Head>
       <WelcomeDIV></WelcomeDIV>
       <CenteredContent>
