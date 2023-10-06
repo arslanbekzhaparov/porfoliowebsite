@@ -8,6 +8,7 @@ import MFpng from '@images/MFsmall.svg';
 import FDSpng from '@images/FDSsmall.svg';
 import GithubIcon from '@images/Githublink.svg';
 
+
 const ProjectSectionContainer = styled.div`
   background-color: black;
   width: 100%;
@@ -225,7 +226,7 @@ function ProjectsSection() {
       <GridContainer>
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
-            <CardLink href={project.website} target="_blank">
+            <CardLink href={project.link} target="_blank">
               <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
               <TitleAndTagsContainer>
                 <TitleText>{project.title}</TitleText>
