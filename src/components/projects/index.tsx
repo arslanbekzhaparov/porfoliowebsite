@@ -6,6 +6,8 @@ import STSpng from '@images/STSsmall.svg';
 import Snakepng from '@images/Snakesmall.svg';
 import MFpng from '@images/MFsmall.svg';
 import FDSpng from '@images/FDSsmall.svg';
+import WeMeetpng from '@images/WeMeet.svg'
+
 import GithubIcon from '@images/Githublink.svg';
 
 
@@ -173,6 +175,15 @@ const CircleImage = styled(Image)`
 const projects = [
   {
     id: 1,
+    title: 'WeMeet',
+    imageUrl: WeMeetpng,
+    color: '#1C6D54', // Custom color for this card
+    link: 'https://github.com/arslanbekzhaparov/meetWe-when2meet-alternative-', // Custom link for this circle
+    tags: ['Software Development', "UI"], // Add tags for Project 1
+    website: 'https://cpen441-prototypes.vercel.app/',
+  },
+  {
+    id: 2,
     title: 'Tennis Robot',
     imageUrl: TRpng,
     color: '#628300', // Custom color for this card
@@ -181,40 +192,40 @@ const projects = [
     website: 'https://lovely-tennis-robot.vercel.app/',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Smart Trash Sorter',
     imageUrl: STSpng,
     color: '#164262', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Smart-Automatic-Recycling-Sorter', // Custom link for this circle
     tags: ['Integrated Engineering'],
-    website: 'https://github.com/arslanbekzhaparov',
+    website: 'https://github.com/arslanbekzhaparov/Smart-Automatic-Recycling-Sorter',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Snake Game',
     imageUrl: Snakepng,
     color: '#FF7F50', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/SNAKE-MATH-GAME', // Custom link for this circle
     tags: ['Software Development'],
-    website: 'https://github.com/arslanbekzhaparov',
+    website: 'https://github.com/arslanbekzhaparov/SNAKE-MATH-GAME',
   },
   {
-    id: 4,
+    id: 5,
     title: 'MyFridge',
     imageUrl: MFpng,
     color: '#DEE4EC', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/MyFridge', // Custom link for this circle
     tags: ['Design', 'Software Development'],
-    website: 'https://github.com/arslanbekzhaparov',
+    website: 'https://github.com/arslanbekzhaparov/MyFridge',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Fraud Detection System',
     imageUrl: FDSpng,
     color: '#656278', // Custom color for this card
     link: 'https://github.com/arslanbekzhaparov/Fraud-Detection-System', // Custom link for this circle
     tags: ['Machine Learning'], // Add tags for Project 1
-    website: 'https://github.com/arslanbekzhaparov',
+    website: 'https://github.com/arslanbekzhaparov/Fraud-Detection-System',
   },
   // Add more projects as needed
 ];
@@ -226,15 +237,15 @@ function ProjectsSection() {
       <GridContainer>
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
-            <CardLink href={project.link} target="_blank">
+            <CardLink href={project.website} target="_blank">
               <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
               <TitleAndTagsContainer>
                 <TitleText>{project.title}</TitleText>
                 <TagsText>{project.tags.join(', ')}</TagsText>
               </TitleAndTagsContainer>
-              {/* <CircleButton $backgroundColor={project.color}>
+              <CircleButton $backgroundColor={project.color}>
                 <CircleImage src={GithubIcon} alt={'Github Link'} />
-              </CircleButton> */}
+              </CircleButton>
             </CardLink>
           </Card>
         ))}
