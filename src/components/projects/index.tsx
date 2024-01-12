@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import TRpng from '@images/TRsmall.svg';
 import STSpng from '@images/STSsmall.svg';
@@ -10,12 +11,23 @@ import WeMeetpng from '@images/WeMeet.svg'
 
 import GithubIcon from '@images/Githublink.svg';
 
+const fadeInAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const ProjectSectionContainer = styled.div`
   background-color: black;
   width: 100%;
   height: 100%;
   overflow-x: hidden; /* Hide horizontal overflow */
+  
 `;
 
 const GridContainer = styled.div`
@@ -49,6 +61,8 @@ const Card = styled.div`
   flex-direction: column; /* Arrange title and tags vertically */
   padding: 20px; /* Add padding to create space for title and tags */
   justify-content: space-between; /* Align content at the top and bottom of the card */
+
+  animation: ${fadeInAnimation} 3s;
 
   &:hover {
     transform: scale(1.01); /* Scale up on hover */
@@ -131,6 +145,8 @@ const CenteredText = styled.div`
   font-size: 48px;
   font-weight: 600;
   line-height: normal;
+  animation: ${fadeInAnimation} 3s;
+
 
   @media (max-width: 525px) {
     margin-bottom: 20px;
@@ -231,21 +247,22 @@ const projects = [
 ];
 
 function ProjectsSection() {
+  
   return (
     <ProjectSectionContainer>
       <CenteredText>Projects</CenteredText>
       <GridContainer>
         {projects.map((project) => (
           <Card key={project.id} color={project.color}>
-            <CardLink href={project.website} target="_blank">
+            <CardLink href={project.link} target="_blank">
               <CardImage src={project.imageUrl} alt={project.title} fill style={{ objectFit: 'contain' }} />
               <TitleAndTagsContainer>
                 <TitleText>{project.title}</TitleText>
                 <TagsText>{project.tags.join(', ')}</TagsText>
               </TitleAndTagsContainer>
-              <CircleButton $backgroundColor={project.color}>
+              {/* <CircleButton $backgroundColor={project.color}>
                 <CircleImage src={GithubIcon} alt={'Github Link'} />
-              </CircleButton>
+              </CircleButton> */}
             </CardLink>
           </Card>
         ))}
