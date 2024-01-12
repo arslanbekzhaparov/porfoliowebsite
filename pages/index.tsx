@@ -73,6 +73,7 @@ const SplineDiv = styled.div`
   @media (max-width: 450px) {
     width: 400px;
     height: 200px; /* Make it a square shape for mobile screens */
+    animation: ${decreaseHeightAnimation} 0.3s ease-in 15s forwards; /* Apply the animation with a 17s delay */
   }
 `;
 
